@@ -1,0 +1,38 @@
+#+title: Hanoi Tower (PhantomOS)
+
+A demo application showcasing WASM on PhantomOS.
+
+* Installation
+** Pre-requisites
+- wasi-sdk (*v22.0*)
+- phantomuserland (with wasm-mirco-runtime submodule)
+- make
+
+  
+** Building
+Check the paths in the [[./Makefile][Makefile]] are correct, then run:
+
+#+begin_src shell
+  make
+#+end_src
+
+* Running
+To run the application it should be launched from an already-running PhantomOS process. For example, you can launch it from _plib/sys/src/ru.dz/ru.dz.phantom.system.shell.ph_:
+
+#+begin_src c
+  // Add to imports
+  import .ru.dz.demo.hanoi_tower
+
+  // Declare the class
+  var hanoi_tower : .ru.dz.demo.hanoi_tower;
+
+  // And launch!
+  hanoi_tower = new .ru.dz.demo.hanoi_tower();
+  hanoi_tower.run(console);
+#+end_src
+
+Then rebuild the PhantomOS classes:
+
+#+begin_src shell
+  make -C $PHANTOM_HOME/ classes-clean classes
+#+end_src

@@ -1,0 +1,5 @@
+CompileFlags:
+  Add: 
+    - --target=wasm32-wasi
+    - -I/opt/wasi-sdk/share/wasi-sysroot/include/wasm32-wasi
+    - -std=c99
