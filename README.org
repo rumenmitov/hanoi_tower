@@ -21,7 +21,7 @@ To run the application it should be launched from an already-running PhantomOS p
 
 #+begin_src c
   // Add to imports
-  import .ru.dz.demo.hanoi_tower
+  import .ru.dz.demo.hanoi_tower;
 
   // Declare the class
   var hanoi_tower : .ru.dz.demo.hanoi_tower;
